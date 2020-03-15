@@ -1,10 +1,10 @@
 FROM python:3.6.1-alpine
 USER root
+ENV APP_ROOT=/opt/app-root
+ADD . ${APP_ROOT}
 
-ADD . /application
-
-WORKDIR /application
-
+WORKDIR ${APP_ROOT}
+COPY . ${APP_ROOT}
 RUN set -e; \
 
 	apk add --no-cache --virtual .build-deps \
@@ -23,7 +23,7 @@ RUN set -e; \
 
 EXPOSE 5000
 
-VOLUME /application
+VOLUME ${APP_ROOT}
 
 USER 1001
-CMD uwsgi --http :5000  --manage-script-name --mount /myapplication=flask_app:app --enable-threads --processes 5
+CMD uwsgi --http :5000  --manage-script-name --mount ${APP_ROOT}=flask_app:app --enable-threads --processes 5
