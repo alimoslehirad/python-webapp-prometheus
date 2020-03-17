@@ -26,4 +26,4 @@ EXPOSE 5000
 VOLUME ${APP_ROOT}
 
 USER 1001
-CMD uwsgi --http :5000  --manage-script-name --mount ${APP_ROOT}=flask_app:app --enable-threads --processes 5
+CMD uwsgi --http :5000  --manage-script-name --mount /app=flask_app:app --enable-threads --processes 5
