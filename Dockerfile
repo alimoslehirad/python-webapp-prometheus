@@ -1,7 +1,7 @@
 FROM python:3.6.1-alpine
 USER root
 ENV APP_ROOT=/opt/app-root
-ADD ./src/* ${APP_ROOT}
+ADD ./src/flask_app.py ${APP_ROOT}
 
 WORKDIR ${APP_ROOT}
 COPY . ${APP_ROOT}
