@@ -1,6 +1,6 @@
 FROM python:3.6.1-alpine
 USER root
-ENV APP_ROOT=/opt/app-root
+ENV APP_ROOT=/application
 
 ADD . ${APP_ROOT}
 COPY ./src ${APP_ROOT}
