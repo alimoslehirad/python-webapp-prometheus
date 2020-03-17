@@ -3,6 +3,7 @@ USER root
 ENV APP_ROOT=/opt/app-root
 
 ADD . ${APP_ROOT}
+COPY ./src/flask_app.py ${APP_ROOT}
 WORKDIR ${APP_ROOT}
 RUN set -e; \
 
