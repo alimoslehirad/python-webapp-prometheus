@@ -4,7 +4,6 @@ ENV APP_ROOT=/opt/app-root
 ADD ./src/flask_app.py ${APP_ROOT}
 
 WORKDIR ${APP_ROOT}
-COPY . ${APP_ROOT}
 RUN set -e; \
 
 	apk add --no-cache --virtual .build-deps \
