@@ -27,4 +27,4 @@ VOLUME ${APP_ROOT}
 
 USER 1001
 
-CMD uwsgi --http :5000  --manage-script-name --mount /myapplication=flask_app:app --enable-threads --processes 5
+CMD uwsgi --http :5000  --manage-script-name --mount /application=flask_app:app --enable-threads --processes 5
