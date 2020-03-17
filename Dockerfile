@@ -1,7 +1,7 @@
 FROM python:3.6.1-alpine
 USER root
 ENV APP_ROOT=/opt/app-root
-ADD ./src/flask_app.py ${APP_ROOT}
+
 ADD . ${APP_ROOT}
 WORKDIR ${APP_ROOT}
 RUN set -e; \
